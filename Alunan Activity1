@@ -1,13 +1,25 @@
 CREATE DATABASE BOOKSTORE;
-CREATE TABLE AUTHOR(AUTHOR_ID VARCHAR(100), FIRSTNAME VARCHAR(100), LASTNAME VARCHAR(100), BIOGRAPHY TEXT, DOB DATE);
-CREATE TABLE PUBLISHER(ID VARCHAR(100), NAME VARCHAR(100), COUNTRY VARCHAR(100));
-CREATE TABLE BOOK(BOOKID VARCHAR(100), TITLE VARCHAR(100), ISBN VARCHAR(100), PUBLISHED_DATE DATE, PRICE INT(10));
+create table Author(
+    ID int(10) unsigned not null, Firstname Varchar(50) not null, Lastname Varchar(50) not null, Biography text, Birthdate date);
+create table Publisher(
+    ID int (10) unsigned not null, Name Varchar(50) not null, Country Varchar(50) not null);
+create table Books(
+    ID int (10) unsigned NOT NULL, Title Varchar (50) NOT Null, ISBN int (10) unsigned Not Null, Published date, Price int (10) unsigned Not Null);
 
 CREATE DATABASE CLINIC;
-CREATE TABLE PATIENT(PHONE_NO INT(11), FIRSTNAME VARCHAR(100), LASTNAME VARCHAR(100), DOB DATE);
-CREATE TABLE DOCTOR(DOCTOR_ID INT (10), FIRSTNAME VARCHAR(100), LASTNAME VARCHAR(100), SPECIALTY TEXT, LICENSED_DATE DATE);
-CREATE TABLE APPOINTMENTS(ID INT (100), DOA DATE, REASON TEXT, STATUS ENUM('SCHEDULED', 'COMPLETED','CANCELED', 'NO-HOW'));
+create table Patient(
+     ID int(10) unsigned not null, Firstname Varchar(50) not null, Lastname Varchar (50) not null, Birthdate date,
+     Phone_no int (11) unsigned not null, Record_date date);
+create table Doctors(
+     ID int(11) unsigned not null, Firstname Varchar(50) not null, Lastname Varchar (50) not null,
+     Specialty Varchar(50) not null, Year_license int (4) unsigned not null);
+create table Appointments(
+     ID int(10) unsigned not null, Appointment_date datetime, Reason Varchar (15) not null, Status enum('Scheduled',
+     'Completed', 'Canceled', 'No-Show'));
 
 CREATE DATABASE COURSE_CATALOG;
-CREATE TABLE DEPARTMENT(ID INT(100), NAME VARCHAR(100), OFFICE_LOCATION TEXT);
-CREATE TABLE COURSES(ID INT(10), CODE VARCHAR(6), TITLE VARCHAR(100), CREDITS INT(3));
+ create table Departments(
+     ID int(10) unsigned not null, Name Varchar(50) not null, Location Varchar(50) not null);
+create table Courses(
+     ID int (10) unsigned not null, Code Varchar(10) not null, Title Varchar(50) not null, Credits int(2) unsigned
+     not null);
